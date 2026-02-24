@@ -1,0 +1,375 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+
+
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('nama-gambar-kamu.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Sesuaikan tinggi hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Supaya teks kontras */
+}
+
+
+
+
+
+
+
+
+
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #1a2a6c;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; }
+.logo i { color: #f1c40f; font-size: 1.5rem; }
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+.nav-links a:hover { color: #f1c40f; }
+
+/* HERO HEADER */
+.hero {
+    height: 200px;
+    background: linear-gradient(rgba(26, 42, 108, 0.8), rgba(26, 42, 108, 0.8)), url('https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* ICON GRID HOME */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+.icon-card {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.icon-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: #f1c40f;
+    color: #1a2a6c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+}
+
+/* MODAL */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+.modal-content 
+{ 
+    background: white; 
+    margin: 10% auto; 
+    padding: 40px; 
+    border-radius: 20px; 
+    width: 80%; 
+    
+    position: relative; 
+    animation: slideIn 0.4s; 
+   bottom: 50px;
+}
+@keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.close { position: absolute; right: 20px; top: 20px; font-size: 2rem; cursor: pointer; }
+
+
+
+
+
+
+
+
+/*28 vihara*/
+.grid-vihara {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-detail {
+    width: 100%;
+    padding: 10px;
+    background: #1a2a6c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+
+
+/*tampilan dua kolom*/
+/* Layout Kontainer di dalam Modal */
+.struktur-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Supaya kalau di HP, foto pindah ke atas biodata */
+}
+
+/* Bagian Kiri (Foto) */
+.struktur-foto {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+/* Ukuran Standar (Desktop/Laptop) */
+.struktur-foto img {
+    width: 100%;
+    max-width: 400px; /* Ukuran pas untuk layar besar */
+    border-radius: 15px;
+    border: 5px solid #f1c40f;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto; /* Supaya foto otomatis di tengah */
+}
+
+/* Pengaturan Khusus Layar HP (Mobile) */
+@media (max-width: 600px) {
+    .struktur-foto img {
+        max-width: 100%; /* Di HP foto akan sedikit lebih kecil dari lebar layar supaya manis */
+        border: 3px solid #f1c40f; /* Bingkai agak tipis di HP supaya nggak makan tempat */
+    }
+}
+
+/* Bagian Kanan (Biodata) */
+.struktur-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.struktur-info h2 {
+    color: #1a2a6c;
+    margin-bottom: 10px;
+}
+
+.table-biodata {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.table-biodata td {
+    padding: 8px 5px;
+    font-size: 0.95rem;
+    vertical-align: top;
+}
+
+.deskripsi-singkat {
+    font-style: italic;
+    color: #666;
+    border-left: 3px solid #f1c40f;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+/* Responsif untuk Layar Kecil (HP) */
+@media (max-width: 768px) {
+    .struktur-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+
+
+/*modal scrol area*/
+/* Kontainer utama untuk scroll di dalam modal */
+.modal-scroll-area {
+    max-height: 70vh; /* Batasi tinggi 70% dari tinggi layar */
+    overflow-y: auto; /* Munculkan scrollbar jika konten lebih tinggi */
+    padding-right: 10px;
+}
+
+/* Mempercantik tampilan scrollbar (Opsional) */
+.modal-scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-scroll-area::-webkit-scrollbar-thumb {
+    background: #f1c40f;
+    border-radius: 10px;
+}
+
+/* Layout tiap baris pejabat */
+.struktur-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pembatas {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 10px 0 20px 0;
+}
+
+.struktur-foto img {
+    width: 100px; /* Ukuran foto staf lebih kecil dari Pembimas tadi */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #1a2a6c;
+}
+
+/* Responsif: Di HP foto jadi di atas */
+@media (max-width: 600px) {
+    .struktur-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+
+.history-container {
+    padding: 10px 20px;
+    border-left: 3px solid #f1c40f; /* Garis emas di samping */
+    margin-left: 10px;
+}
+
+.history-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Titik lingkaran di garis timeline */
+.history-item::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: #1a2a6c;
+    border: 3px solid #f1c40f;
+    border-radius: 50%;
+}
+
+.history-year {
+    font-weight: 700;
+    color: #1a2a6c;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.history-item p {
+    font-size: 0.95rem;
+    color: #555;
+    text-align: justify;
+}
+
+
+
+
+/*detail vihara*/
+.vihara-detail-container {
+    text-align: left;
+}
+
+.img-detail-vihara {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.vihara-info-list p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.vihara-info-list i {
+    color: #1a2a6c;
+    width: 25px;
+}
+
+.vihara-action {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.btn-maps {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-maps:hover {
+    background-color: #219150;
+    transform: scale(1.05);
+}
+
+
+
+/*footer*/
+footer {
+    margin-top: 50px; /* Angka ini bisa kamu besarkan sesuai selera */
+    padding: 20px 0;   /* Supaya teks di dalam footer ada ruang atas-bawah */
+    text-align: center;
+    background-color: #f8f9fa; /* Opsional: warna background */
+}
