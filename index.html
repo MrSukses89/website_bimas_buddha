@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bimas Buddha Kaltim | Portal Resmi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/nav01.css">
+    <link rel="icon" type="image/x-icon" href="ico/x icon/buddha.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-dharmachakra"></i> 
+            <span>Bimas Buddha Kaltim</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+          
+            <li><a href="#" onclick="showSection('vihara')">Vihara Binaan</a></li>
+        </ul>
+    </nav>
+
+   <header class="hero">
+    <div class="hero-content">
+         <h1 id="main-title">Selamat Datang</h1>
+        <img src="ico/images/batik/batik_kalimantan.png" alt="Logo Kemenag" width="150">
+       
+        <p id="main-desc">Kementerian Agama Provinsi Kalimantan Timur</p>
+    </div>
+</header>
+
+    <main class="container">
+        <section id="sec-home" class="active">
+            <div class="welcome-box">
+                <h2>Layanan Informasi Agama Buddha</h2>
+                <p>Silakan klik menu profil di bawah untuk informasi lebih lanjut</p>
+            </div>
+            
+            <div class="icon-grid">
+                <div class="icon-card" onclick="openModal('struktur')">
+                    <div class="icon-circle"><i class="fa-solid fa-sitemap"></i></div>
+                    <h3>Struktur Organisasi</h3>
+                    <p>Mengenal jajaran pembina Bimas Buddha</p>
+                </div>
+                <div class="icon-card" onclick="openModal('sejarah')">
+                    <div class="icon-circle"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3>Sejarah</h3>
+                    <p>Perjalanan Bimas Buddha di Kalimantan Timur</p>
+                </div>
+                <div class="icon-card" onclick="openModal('visimisi')">
+                    <div class="icon-circle"><i class="fa-solid fa-star"></i></div>
+                    <h3>Visi & Misi</h3>
+                    <p>Target dan arah pengabdian masyarakat</p>
+                </div>
+            </div>
+        </section>
+
+
+
+<section id="sec-vihara" style="display:none;">
+    <div class="welcome-box">
+        <h2>Kategori Vihara Binaan</h2>
+        <p>Silakan pilih kategori wilayah untuk melihat daftar rumah ibadah</p>
+    </div>
+
+    <div class="icon-grid">
+        <div class="icon-card" onclick="loadViharaData('wilayah1')">
+            <div class="icon-circle" style="background: #27ae60;"><i class="fa-solid fa-city"></i></div>
+            <h3>Samarinda & Bontang</h3>
+            <p>Daftar vihara di pusat kota</p>
+        </div>
+
+        <div class="icon-card" onclick="loadViharaData('wilayah2')">
+            <div class="icon-circle" style="background: #e67e22;"><i class="fa-solid fa-map-location-dot"></i></div>
+            <h3>Balikpapan & Penajam</h3>
+            <p>Daftar vihara wilayah selatan</p>
+        </div>
+
+        <div class="icon-card" onclick="loadViharaData('wilayah3')">
+            <div class="icon-circle" style="background: #2980b9;"><i class="fa-solid fa-tree"></i></div>
+            <h3>Kutai & Berau</h3>
+            <p>Daftar vihara wilayah utara & pedalaman</p>
+        </div>
+    </div>
+
+    <div id="vihara-list-container" class="grid-vihara" style="margin-top: 50px;"></div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Bimas Buddha Kaltim | Kementerian Agama RI</p>
+    </footer>
+
+    <script src="js/nav01.js"></script>
+</body>
+</html>
